@@ -1,0 +1,150 @@
+@mixin from-992-1300{
+    @media screen and (min-width:992.67px) and (max-width:1300px) {
+        @content;
+    }
+}
+@mixin from-1300-1700{
+    @media screen and (min-width:1300px) and (max-width:1700px) {
+        @content;
+    }
+}
+@mixin from-575-992{
+    @media screen and (min-width:575.67px) and (max-width:992px) {
+        @content;
+    }
+}
+@mixin from-320-575{
+    @media screen and (min-width:320.67px) and (max-width:575px) {
+        @content;
+    }
+}
+@mixin above-1600{
+    @media screen and (min-width:1600px){
+        @content;
+    }
+}
+@mixin above-1900{
+    @media screen and (min-width:1900px){
+        @content;
+    }
+}
+.ach-wrap{
+    background-image: url("../../../public/achieve-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 690px;
+    background-position: center center;
+    padding: 80px 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: clip;
+    @include above-1600{
+        background-position-y: 50px;
+    }
+    @include above-1900(){
+        background-position-y: -100px;
+        height: 100%;
+    }
+    &::after{
+        content: '';
+        background-image: url('../../../public/office-work.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: -200px;
+        top:-200px;
+        width: 351px;
+        height: 379px;
+        z-index: -1;
+        @include from-320-575{
+            content: '';
+            width: 0px;
+            height: 0px;
+        }
+    }
+    @include from-320-575{
+        background-image: url('../../../public/about-rockect-bg.png');
+        background-position-y: -35px;
+        background-size: cover;
+        &::before{
+            content: '';
+            background-image: url('../../../public/mobile-office.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 0px;
+            top:-100px;
+            width: 131px;
+            height: 143px;
+            z-index: -1;
+        }
+    }
+    @include from-575-992{
+        height: 450px;
+        padding: 20px 50px;
+    }
+    @include from-320-575{
+        padding: 20px;
+        height: auto;
+    }
+        h1{
+            font-size: 30px;
+            color: #fff;
+            text-transform: capitalize;
+            line-height: normal;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            // @include above-1600{
+            //     font-size: 2.5vw;
+            // }
+            @include from-320-575{
+                font-size: 22px;
+                text-align: center;
+            }
+        }
+        p{
+            font-size: 16px;
+            text-align: center;
+            font-weight: 300;
+            width: 70%;
+            margin-bottom: 40px;
+            color: #fff;
+            line-height: normal;
+            // @include above-1600{
+            //     font-size: 1.2vw;
+            // }
+            @include from-320-575{
+                width: 90%;
+            }
+        }
+        img{
+            width: 90% !important;
+            height: auto !important;
+            align-self: center;
+            @include from-992-1300{
+                width: 100% !important;
+                height: auto !important;
+            }
+            @include from-575-992{
+                width: 100% !important;
+                height: auto !important;
+            }
+            @include from-320-575{
+                display: none;
+            }
+            @include above-1900{
+                width: fit-content !important;
+            }
+
+        }
+        .mobile-roc{
+            display: none;
+            @include from-320-575{
+                display: block;
+                width: 100% !important;
+                height: auto;
+            }
+        }
+}

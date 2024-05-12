@@ -1,0 +1,240 @@
+@mixin from-992-to-1140{
+    @media screen and (min-width:992px) and (max-width:1140px) {
+        @content;
+    }
+}
+@mixin from-320-to-992{
+    @media screen and (min-width:320px) and (max-width:992px) {
+        @content;
+    }
+}
+@mixin from-320-to-575{
+    @media screen and (min-width:320px) and (max-width:575px) {
+        @content;
+    }
+}
+@mixin above-1600{
+    @media screen and (min-width:1600px) {
+        @content;
+    }
+}
+@mixin above-992{
+    @media screen and (min-width:992px) {
+        @content;
+    }
+}
+.faqs-main-wrapper{
+display: flex;
+flex-wrap: wrap;
+padding: 50px 70px;
+background-color: #fff;
+@include from-320-to-992{
+   padding:50px 20px 20px 20px;
+}
+@include above-992{
+    padding: 50px 100px;
+}
+.faqs-sec{
+    width: 50%;
+    @include from-320-to-992{
+        width: 100%;
+    }
+    h1{
+        font-size: 30px;
+        margin-bottom: 20px;
+        font-weight: 600;
+        @include from-320-to-575{
+            font-size: 24px;
+        }
+        // @include above-1600{
+        //     font-size: 2.5vw;
+        // }
+    }
+    p{
+        line-height: normal;
+        font-size: 16px;
+        margin-bottom: 20px;
+        font-weight: 300;
+        animation-name: faqOpenAnim;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        @include from-320-to-575{
+            font-size: 15px;
+        }
+        // @include above-1600{
+        //     font-size: 1.1vw;
+        // }
+    }
+    button{
+        background-color: transparent;
+        font-size: 16px;
+        line-height: normal;
+        font-weight: 400;
+        text-align: left;
+        border:0px solid #000;
+        margin-bottom: 20px;
+        padding: 0px;
+        position: relative;
+        width: 95%;
+        // @include above-1600{
+        //     font-size: 1.1vw;
+        // }
+        @include from-320-to-575{
+            font-size: 15px;
+            text-align: start;
+        }
+            &::after{
+                content: '';
+                background-image: url('../../../public/plus-2.png');
+                width: 11px;
+                height: 11px;
+                position: absolute;
+                top:0px;
+                bottom:0px;
+                right: -50px;
+                @include from-320-to-992{
+                    right: -20px;
+                }
+            }
+            &::before{
+                position: absolute;
+                bottom: -10px;
+                left: 0px;
+                content:'';
+                width:100%;
+                height: 2px;
+                background-color: #4663AC;
+            }
+    }
+    .plusAnim{
+        &::after{
+            animation-name: rotatePlus;
+                animation-duration: 1s;
+                animation-iteration-count: 1;
+                animation-timing-function: ease-in-out;
+        }
+    }
+    
+}
+.form-sec{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    @include from-320-to-992{
+        width: 100%;
+        justify-content: center;
+        margin-top: 30px;
+    }
+        .inner-wrap{
+            align-self: center;
+            width: 70%;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 0px 30px;
+            background: linear-gradient(180deg, #6989CF 0%, #36549B 100%);
+            @include from-992-to-1140{
+                width: 60%;
+            }
+            @include from-320-to-992{
+                width: 100%;
+                padding: 30px;
+            }
+        }
+        h1{
+            color: #fff;
+            font-size: 22px;
+            font-weight: 600;
+            @include from-320-to-575{
+                font-size: 20px;
+            }
+            // @include above-1600{
+            //     font-size: 1.5vw;
+            // }
+        }
+        .form-wrap{
+            display: flex;
+            flex-direction: column;
+                .input-cus{
+                    background-color: transparent;
+                    border:0px;
+                    font-size: 16px;
+                    font-weight: 300;
+                    color: #fff;
+                    border-bottom: 1px solid #fff;
+                    padding: 15px 0px;
+                    // @include above-1600{
+                    //     font-size: 1.1vw;
+                    // }
+                    &::placeholder {
+                        color: #fff;
+                        opacity: 1; /* Firefox */
+                      }
+                }
+                textarea{
+                    background-color: transparent;
+                    border:0px;
+                    font-size: 16px;
+                    font-weight: 300;
+                    color: #fff;
+                    border-bottom: 1px solid #fff;
+                    padding: 15px 0px;
+                    // @include above-1600{
+                    //     font-size: 1.1vw;
+                    // }
+                    &::placeholder {
+                        color: #fff;
+                        opacity: 1; /* Firefox */
+                      }
+                }
+                .subBtn{
+                    align-self: flex-end;
+                    border-radius: 20px 0px 20px 20px;
+                    background: #FFF;
+                    font-size: 18px;
+                    border:1px solid #fff;
+                    margin-top: 20px;
+                    padding: 5px 10px;
+                    transition: 0.3s ease-in-out;
+                    // @include above-1600{
+                    //     font-size: 1.3vw;
+                    // }
+                        &:hover{
+                            background: transparent;
+                            color: #FFF;
+                            cursor: pointer;
+                        }
+                }
+                
+        }
+}
+}
+@keyframes rotatePlus {
+    0%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes faqOpenAnim {
+    0%{
+        opacity: 0;
+    }100%{
+        opacity: 1;
+    }
+}
+@keyframes faqCloseAnim {
+    0%{
+        opacity: 1;
+    }100%{
+        opacity: 0;
+    }
+}
+.swal2-title{
+    font-family: '__Poppins_e40301', '__Poppins_Fallback_e40301';}
+.swal2-html-container{
+    font-family: '__Poppins_e40301', '__Poppins_Fallback_e40301';}
+.swal2-confirm{
+    font-family: '__Poppins_e40301', '__Poppins_Fallback_e40301';}

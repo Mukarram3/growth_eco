@@ -1,0 +1,478 @@
+@mixin from-992-1300{
+    @media screen and (min-width:992.67px) and (max-width:1300px) {
+        @content;
+    }
+}
+@mixin from-992-1100{
+    @media screen and (min-width:992.67px) and (max-width:1100px) {
+        @content;
+    }
+}
+@mixin from-1300-1700{
+    @media screen and (min-width:1300px) and (max-width:1700px) {
+        @content;
+    }
+}
+@mixin from-575-992{
+    @media screen and (min-width:575.67px) and (max-width:992px) {
+        @content;
+    }
+}
+@mixin from-320-575{
+    @media screen and (min-width:320.67px) and (max-width:575px) {
+        @content;
+    }
+}
+@mixin from-320-992{
+    @media screen and (min-width:320.67px) and (max-width:992px) {
+        @content;
+    }
+}
+@mixin from-320-400{
+    @media screen and (min-width:320.67px) and (max-width:400px) {
+        @content;
+    }
+}
+@mixin from-400-575{
+    @media screen and (min-width:400.67px) and (max-width:575px) {
+        @content;
+    }
+}
+@mixin above-1600{
+    @media screen and (min-width:1600px){
+        @content;
+    }
+}
+.our-team-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 500px;
+    background-image: url('../../../public/our-team.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include from-320-575{
+        background-image: url('../../../public/team-mobile-bg.png');
+        background-position: top;
+        height: 440px;
+    }
+    @include above-1600{
+        height: 650px;
+    }
+        p{
+            margin-bottom: 30px;
+            font-size: 16px;
+            font-weight: 300;
+            width: 50%;
+            text-align: center;
+            @include above-1600{
+                font-size: 1.2vw;
+            }
+            @include from-320-575{
+                width: 100%;
+            }
+        }
+        .team-contact{
+            margin-top: 0px;
+        text-decoration: none;
+        padding: 5px 10px;
+        font-size: 16px;
+        border-radius: 0px 20px 20px 20px;
+        background: #415B9F;
+        color: #fff;
+        border: 1px solid #415B9F;
+        transition: 0.3s ease-in-out;
+        margin-bottom: 30px;
+        @include above-1600{
+            font-size: 1.3vw;
+        }
+            &:hover{
+                background: transparent;
+                color: #415B9F;
+                border: 1px solid #415B9F;
+            }
+        }
+}
+.our-team-skill{
+    height: 450px;
+    background-image: url('../../../public/our-team-q.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 150px;
+    @include from-320-992{
+        padding: 20px;
+    }
+    @include from-320-400{
+        padding: 20px;
+        background-image: url('../../../public/skilled-mobile.png');
+        background-position-y: -39vw;
+        height: 330px;
+    }
+    @include from-400-575{
+        background-position-y: -16.5vw;
+    }
+    @include above-1600{
+        background-position-y: -12.5vw;
+        height: 500px;
+    }
+        h1{
+            margin-top: 80px;
+            font-size: 30px;
+            font-weight: 600;
+            line-height: normal;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 10px;
+            @include from-320-575{
+                margin-top: 10px;
+                font-size: 24px;
+            }
+            @include above-1600{
+             font-size: 2.5vw;   
+            }
+        }
+        p{
+            font-size: 16px;
+            font-weight: 300;
+            color: #fff;
+            text-align: center;
+            width: 60%;
+            line-height: 25px;
+            @include from-320-992{
+                width: 100%;
+                font-size: 12px;
+            }
+            @include from-320-575{
+                line-height: 20px;
+            }
+            @include above-1600{
+                font-size: 1.1vw;   
+               }
+        }
+}
+.team-wrapper{
+    background-image: url('../../../public/triangle-lines.png');
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 16vw;
+    @include from-575-992{
+        padding: 20px 40px;
+    }
+    @include from-320-575(){
+        background-image: none;
+        padding: 20px;
+    }
+    @include from-992-1100{
+        padding: 20px 100px;
+    }
+    @include above-1600{
+        padding: 20px 20vw;
+    }
+        h1{
+            text-align: center;
+            font-size: 30px;
+            font-weight: 600;
+            line-height: normal;
+            margin-bottom: 10px;
+            @include from-320-575{
+                font-size: 24px;
+            }
+            @include above-1600{
+                font-size: 2.5vw;   
+               }
+        }
+        p{
+            text-align: center;
+            width: 50%;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: normal;
+            @include from-320-575{
+                width: 100%;
+                font-size: 14px;
+            }
+            @include above-1600{
+                font-size: 1.1vw;   
+               }
+        }
+        .upper-team{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            @include from-320-992{
+                width: 100%;
+            }
+            @include from-320-575{
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+                .team-card{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    @include from-320-575{
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+                    @include above-1600{
+                        margin-left: 50px;
+                        margin-right: 50px;
+                    }
+                    .circle-img{
+                        @include from-320-575{
+                            align-self: center;
+                            img{
+                                display: none;
+                            }
+                            .mobile-avatar-img{
+                                display: block !important;
+                            }
+                        }
+                        .mobile-avatar-img{
+                            display: none;
+                        }
+                    }
+                        .name{
+                            color: #36508F;
+                            font-size: 18px;
+                            font-weight: 600;
+                            line-height: normal;
+                            text-transform: uppercase;
+                            margin-bottom: 5px;
+                            align-self: center;
+                            margin-top: 10px;
+                            @include from-320-575{
+                                font-size: 10px;
+                            }
+                            @include above-1600{
+                                font-size: 1.3vw;   
+                               }
+                        }
+                        p{
+                            align-self: center;
+                            font-size: 15px;
+                            font-weight: 300;
+                            @include from-320-575{
+                                font-size: 8px;
+                            }
+                            @include above-1600{
+                                font-size: 1.1vw;   
+                               }
+                        }
+
+                }
+        }
+        .mid-team{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            @include from-320-992{
+                width: 100%;
+            }
+                .team-card{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    @include from-320-575{
+                        width: 50%;
+                        margin-bottom: 20px;
+                    }
+                    @include above-1600{
+                        margin-right: 50px;
+                        margin-left: 50px;
+                    }
+                    
+                        .circle-img{
+                            @include from-320-575{
+                                img{
+                                    display: none;
+                                }
+                                .mobile-avatar-img{
+                                    display: block !important;
+                                }
+                            }
+                            .mobile-avatar-img{
+                                display: none;
+                            }
+                        }
+                        .name{
+                            color: #36508F;
+                            font-size: 18px;
+                            font-weight: 600;
+                            line-height: normal;
+                            text-transform: uppercase;
+                            margin-bottom: 5px;
+                            align-self: center;
+                            margin-top: 10px;
+                            @include from-320-575{
+                                font-size: 10px;
+                                align-self: center;
+                                
+                            }
+                            @include above-1600{
+                                font-size: 1.3vw;   
+                               }
+
+                        }
+                        p{
+                            align-self: center;
+                            font-size: 15px;
+                            font-weight: 300;
+                            @include from-320-575{
+                                font-size: 8px;
+                            }
+                            @include above-1600{
+                                font-size: 1.1vw;   
+                               }
+                        }
+
+                }
+        }
+}
+.see-more-wrap{
+    margin-top: 50px;
+    margin-bottom: 50px;
+        a{
+            color: #000;
+            font-size: 20px;
+            text-transform: capitalize;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            display: flex;
+            @include above-1600{
+                font-size: 1.3vw;   
+               }
+            @include from-320-575{
+                font-size: 16px;
+            }
+                span{
+                    display: inline-block;
+                    margin-left: 20px;
+                    padding-top: 2px;
+                }
+        }
+}
+.arrow-divider{
+    position: relative;
+        img{
+            position: absolute;
+            top:-700px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            z-index: -2;
+            margin: 0px auto;
+            @include from-320-992{
+                display: none;
+            }
+        }
+}
+.team-action-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    overflow-x: clip;
+    h1{
+        font-size: 30px;
+        line-height: normal;
+        text-transform: capitalize;
+        text-align: center;
+        font-weight: 600;
+        @include from-320-575{
+         font-size: 24px; 
+         margin-bottom: 20px;  
+        }
+        @include above-1600{
+            font-size: 2.5vw;   
+           }
+    }
+    p{
+        width: 50%;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: normal;
+        @include from-320-575{
+            width: 90%;
+            font-size: 15px;
+        }
+        @include above-1600{
+            font-size: 1.1vw;   
+           }
+    }
+    img{
+        align-self: center;
+        @include from-320-992{
+            width: 70%;
+            height: 100%;
+        }
+        @include from-320-575{
+            width: 133vw;
+        }
+    }
+}
+.interest{
+    padding: 50px;
+    background: linear-gradient(180deg, #35539A 0%, #577CC8 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 150px;
+    margin-top: 150px;
+    @include from-320-575{
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    h1{
+        color: #fff;
+        text-transform: capitalize;
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        line-height: normal;
+        @include from-320-992{
+            text-align: center;
+        }
+        @include from-320-575{
+            font-size: 24px;
+        }
+        @include above-1600{
+            font-size: 2.5vw;   
+           }
+    }
+    .contact-link{
+        border-radius: 20px 0px 20px 20px;
+        background: #FFF;
+        font-size: 16px;
+        text-decoration: none;
+        padding: 5px 10px;
+        color: #000;
+        transition: 0.3s ease-in-out;
+        border:1px solid #fff;
+        @include from-320-575{
+            font-size: 16px;
+        }
+        @include above-1600{
+            font-size: 1.3vw;   
+           }
+         &:hover{
+            background: transparent;
+            color: #fff;
+         }
+    }
+}
