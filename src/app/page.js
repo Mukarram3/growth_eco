@@ -41,7 +41,8 @@ export default function Home() {
   return (
     <main>
       <Head>
-        <title>GrowthEco | Home</title>
+        <title>GrowthEcho | Home</title>
+        <meta name="title" content="GrowthEcho" />
         <meta
           name="description"
           content="Full potential to your Amazon business with our powerhouse solutions"
